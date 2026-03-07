@@ -271,10 +271,10 @@ class MentalHealthServer {
                     await msg.save();
 
                     const payload = {
-                        _id: msg._id,
-                        appointmentId: msg.appointmentId,
+                        _id: msg._id.toString(),
+                        appointmentId: msg.appointmentId.toString(),
                         senderId: msg.senderId.toString(),
-                        receiverId: msg.receiverId.toString(),
+                        receiverId: receiverUserId ? receiverUserId.toString() : '',
                         content: data.content,
                         isRead: false,
                         createdAt: msg.createdAt
